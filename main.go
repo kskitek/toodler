@@ -2,25 +2,28 @@ package main
 
 import (
 	"fmt"
+"github.com/kskitek/toodler/database"
 	"log"
 )
 
 func main() {
 
-	db := &Database{}
+	var db Database
+	// TODO init db
+
 	err := db.Connect()
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-s := &Searcher{}
+	s := &Searcher{}
 	result, err := s.Search("http://github.com/kskitek/toodler")
 	if err != nil {
 		log.Fatal(err.Error())
 	}
 
-	todos := make([]Todo, len(result))
+	todos := make([]database.Todo, len(result))
 	for i, v := range result {
-		todos[i] = Todo{
+		todos[i] = database.Todo{
 			Hash:       v.Hash,
 			Author:     v.Author,
 			Date:       v.Date,

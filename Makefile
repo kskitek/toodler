@@ -1,4 +1,4 @@
-CGO_ENABLED=0
+CGO_ENABLED=1 # because of `go-sqlite`
 
 SVC_NAME=toodler
 # DOCKER_REGISTRY=

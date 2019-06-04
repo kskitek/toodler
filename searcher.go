@@ -51,6 +51,7 @@ func (s *Searcher) cloneRepository(url, projectName string) (projectPath string,
 		cmd = exec.Command("git", "pull")
 		cmd.Dir = projectPath
 		// TODO if "Already up to date" I don't have to look for TODOs.. return an error and handle in Search
+    // TODO maybe in case of update it would be easier to find TODOs on diff?
 	}
 	cmd.Stdout = os.Stdout // TODO write me to log file per project
 	cmd.Stderr = os.Stderr

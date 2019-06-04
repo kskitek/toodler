@@ -2,4 +2,4 @@ module github.com/kskitek/toodler
 
 go 1.12
 
-require go.etcd.io/bbolt v1.3.2
+require github.com/mattn/go-sqlite3 v1.10.0
